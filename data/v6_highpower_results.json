@@ -1,0 +1,70 @@
+{
+  "version": "v6_highpower",
+  "n_permutations": 2000,
+  "band_size": 300,
+  "fixes_applied": [
+    "language-level permutation test (not ttest_1samp)",
+    "frequency-stratified sensitivity analysis",
+    "neutral sentence template: 'There is {}.'"
+  ],
+  "sentence_templates": {
+    "en": "There is {}.",
+    "de": "Es gibt {}.",
+    "es": "Hay {}.",
+    "ru": "Есть {}.",
+    "zh": "有{}。",
+    "ar": "هناك {}.",
+    "he": "יש {}.",
+    "ta": "{} இருக்கிறது.",
+    "tl": "Mayroong {}.",
+    "id": "Ada {}.",
+    "ja": "{}があります。",
+    "ko": "{}이 있습니다.",
+    "tr": "{} var."
+  },
+  "n_languages": 13,
+  "active_languages": [
+    "en",
+    "de",
+    "es",
+    "ru",
+    "zh",
+    "ar",
+    "he",
+    "ta",
+    "tl",
+    "id",
+    "ja",
+    "ko",
+    "tr"
+  ],
+  "band_results": [
+    {
+      "band": "high-freq (top)",
+      "n_concepts": 300,
+      "true_rho": 0.07320419721804426,
+      "p_value": 0.0004997501249375312,
+      "same_family_rho": 0.12488513835243502,
+      "diff_family_rho": 0.06729780394554247,
+      "family_gap_p": 0.018124655045716195
+    },
+    {
+      "band": "mid-freq  (middle)",
+      "n_concepts": 300,
+      "true_rho": 0.07625090337506393,
+      "p_value": 0.0004997501249375312,
+      "same_family_rho": 0.1049933108488815,
+      "diff_family_rho": 0.07296605680662763,
+      "family_gap_p": 0.12737148851262567
+    },
+    {
+      "band": "low-freq  (bottom)",
+      "n_concepts": 300,
+      "true_rho": 0.15295712468749845,
+      "p_value": 0.0004997501249375312,
+      "same_family_rho": 0.1713686202010457,
+      "diff_family_rho": 0.15085295377166447,
+      "family_gap_p": 0.49398321839147546
+    }
+  ]
+}
