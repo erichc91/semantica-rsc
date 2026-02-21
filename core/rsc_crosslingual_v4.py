@@ -305,10 +305,44 @@ def run():
     print("Computing shuffle baseline (300 shuffles)...")
     baseline_mean = shuffle_baseline(lang_embeddings, active_langs, n=300)
 
-    # Stats
+    # --- Statistical test ---
+    # IMPORTANT: ttest_1samp would be WRONG here.
+    # The 78 pairwise rhos are NOT independent — each language appears in 12 pairs,
+    # creating strong positive dependence. ttest_1samp underestimates std error,
+    # producing p-values that are too small.
+    #
+    # Correct approach: language-level permutation test.
+    # Shuffle concept labels independently per language (not per pair), then
+    # recompute all pairwise rhos. This preserves the dependence structure.
+    # H0: structural correlation = baseline (concept labels don't matter)
+    # H1: structural correlation > baseline (concept identity drives structure)
+
     true_scores = [s for _, _, s, _ in all_pairs]
     true_mean = float(np.mean(true_scores))
-    t_base, p_base = stats.ttest_1samp(true_scores, baseline_mean)
+
+    print("Computing language-level permutation test (1000 permutations)...")
+    rng_perm = np.random.default_rng(99)
+    all_concept_keys = list(list(lang_embeddings.values())[0].keys())
+    perm_means = []
+    for _ in range(1000):
+        shuffled_embs = {}
+        for lang, emb in lang_embeddings.items():
+            perm_order = rng_perm.permutation(all_concept_keys).tolist()
+            orig_keys = list(emb.keys())
+            shuffled_embs[lang] = {perm_order[i]: emb[orig_keys[i]] for i in range(len(orig_keys))}
+        perm_scores = []
+        langs = list(shuffled_embs.keys())
+        for i, la in enumerate(langs):
+            for lb in langs[i+1:]:
+                s = structural_similarity(shuffled_embs[la], shuffled_embs[lb])
+                if not np.isnan(s):
+                    perm_scores.append(s)
+        if perm_scores:
+            perm_means.append(float(np.mean(perm_scores)))
+    p_base = float((np.array(perm_means) >= true_mean).mean())
+    if p_base == 0.0:
+        p_base = 1.0 / (len(perm_means) + 1)  # report upper bound
+
     sf_mean = float(np.mean(same_family_scores)) if same_family_scores else 0.0
     df_mean = float(np.mean(diff_family_scores)) if diff_family_scores else 0.0
     t_fam, p_fam = stats.ttest_ind(same_family_scores, diff_family_scores)
