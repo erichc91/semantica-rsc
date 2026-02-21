@@ -1,0 +1,138 @@
+{
+  "version": "targeted_experiments_v1",
+  "description": "Three curated concept-set experiments: emotions, antonyms, children's first words",
+  "total_runtime_seconds": 148.1,
+  "experiments": [
+    {
+      "name": "Emotion Universality (Ekman + secondary)",
+      "n_concepts": 15,
+      "n_languages": 13,
+      "active_languages": [
+        "en",
+        "de",
+        "es",
+        "ru",
+        "zh",
+        "ar",
+        "he",
+        "ta",
+        "tl",
+        "id",
+        "ja",
+        "ko",
+        "tr"
+      ],
+      "observed_rho": 0.13189280553745894,
+      "p_value": 0.000999000999000999,
+      "n_permutations": 1000,
+      "same_family_rho": 0.01769636541490313,
+      "diff_family_rho": 0.14494382726575103,
+      "family_gap_p": 0.06265189464593336,
+      "runtime_seconds": 82.4
+    },
+    {
+      "name": "Antonym Structural Consistency (10 pairs)",
+      "n_concepts": 20,
+      "n_languages": 13,
+      "active_languages": [
+        "en",
+        "de",
+        "es",
+        "ru",
+        "zh",
+        "ar",
+        "he",
+        "ta",
+        "tl",
+        "id",
+        "ja",
+        "ko",
+        "tr"
+      ],
+      "observed_rho": 0.08503067307145566,
+      "p_value": 0.000999000999000999,
+      "n_permutations": 1000,
+      "same_family_rho": 0.21513972540426113,
+      "diff_family_rho": 0.07016106709056362,
+      "family_gap_p": 0.04339979817453605,
+      "antonym_analysis": {
+        "pair_distances": {
+          "hot_cold": {
+            "mean": 0.8778113035055307,
+            "std": 0.10165541931906252
+          },
+          "big_small": {
+            "mean": 0.8898625007042518,
+            "std": 0.09376723227271708
+          },
+          "fast_slow": {
+            "mean": 0.9196942081818213,
+            "std": 0.08236791606671381
+          },
+          "light_dark": {
+            "mean": 0.8697187442045945,
+            "std": 0.12764529662739602
+          },
+          "young_old": {
+            "mean": 0.8077261190001781,
+            "std": 0.23776656061261117
+          },
+          "rich_poor": {
+            "mean": 0.881371443088238,
+            "std": 0.1130953455822858
+          },
+          "happy_sad": {
+            "mean": 0.8547741312247056,
+            "std": 0.14112557563490075
+          },
+          "strong_weak": {
+            "mean": 0.886211519057934,
+            "std": 0.10428014334740862
+          },
+          "good_bad": {
+            "mean": 0.8554169856584989,
+            "std": 0.17393354622127022
+          },
+          "love_hate": {
+            "mean": 0.884810209274292,
+            "std": 0.11821773736079524
+          }
+        },
+        "avg_antonym_std": 0.12938547730451616,
+        "avg_random_std": 0.13675788480070428,
+        "avg_antonym_similarity": 0.8727397163900046,
+        "antonym_std_vs_random_t": -0.6239692955522255,
+        "antonym_std_vs_random_p": 0.5339635075200195,
+        "interpretation": "Antonym pairs MORE structurally consistent than random (RSC holds for antonyms)"
+      },
+      "runtime_seconds": 32.7
+    },
+    {
+      "name": "Children's First Words (WordBank cross-linguistic)",
+      "n_concepts": 20,
+      "n_languages": 13,
+      "active_languages": [
+        "en",
+        "de",
+        "es",
+        "ru",
+        "zh",
+        "ar",
+        "he",
+        "ta",
+        "tl",
+        "id",
+        "ja",
+        "ko",
+        "tr"
+      ],
+      "observed_rho": 0.06723875514175874,
+      "p_value": 0.002,
+      "n_permutations": 1000,
+      "same_family_rho": 0.08659541523966988,
+      "diff_family_rho": 0.06502656541628318,
+      "family_gap_p": 0.7690862760883643,
+      "runtime_seconds": 33.1
+    }
+  ]
+}
