@@ -1,0 +1,115 @@
+{
+  "experiment": "within_category_topology_manipulation",
+  "timestamp": "2026-02-21T15:43:24",
+  "runtime_seconds": 54.4,
+  "random_baseline": {
+    "mean": 0.03713558414448907,
+    "std": 0.03485302888877052,
+    "n_samples": 2000
+  },
+  "results": {
+    "animals_parallel": {
+      "type": "parallel",
+      "category": "animals",
+      "n": 8,
+      "rho": -0.0350371212440178,
+      "percentile_vs_random": 0.2,
+      "z_vs_random": -2.0707727740984887,
+      "note": "Siblings in category \u2014 no mutual structural constraint",
+      "missing_words": [
+        "horse",
+        "cow"
+      ]
+    },
+    "animals_hierarchical": {
+      "type": "hierarchical",
+      "category": "animals",
+      "n": 6,
+      "rho": 0.0575091575091575,
+      "percentile_vs_random": 74.4,
+      "z_vs_random": 0.5845567352304339,
+      "note": "Evolutionary complexity chain \u2014 each word has position relative to others",
+      "missing_words": [
+        "microbe",
+        "worm",
+        "mammal",
+        "primate"
+      ]
+    },
+    "body_hierarchical": {
+      "type": "hierarchical",
+      "category": "body",
+      "n": 6,
+      "rho": -0.017353479853479847,
+      "percentile_vs_random": 3.15,
+      "z_vs_random": -1.563395325223218,
+      "note": "Functional hierarchy \u2014 cell->tissue->organ->system, causal/structural dependencies",
+      "missing_words": [
+        "organ",
+        "vessel",
+        "nerve",
+        "brain"
+      ]
+    },
+    "numbers_parallel": {
+      "type": "parallel",
+      "category": "numbers",
+      "n": 7,
+      "rho": 0.06525141525141527,
+      "percentile_vs_random": 79.45,
+      "z_vs_random": 0.8066968982798534,
+      "note": "Cardinal numbers as category instances \u2014 do they have structural rho?",
+      "missing_words": [
+        "three",
+        "four",
+        "ten"
+      ]
+    },
+    "numbers_hierarchical": {
+      "type": "hierarchical",
+      "category": "numbers",
+      "n": 9,
+      "rho": 0.0015774015774015812,
+      "percentile_vs_random": 15.5,
+      "z_vs_random": -1.0202321772473553,
+      "note": "Mathematical structure chain \u2014 each concept relates to others hierarchically",
+      "missing_words": [
+        "infinity"
+      ]
+    },
+    "emotions_parallel": {
+      "type": "parallel",
+      "category": "emotions",
+      "n": 6,
+      "rho": 0.0491735829031216,
+      "percentile_vs_random": 66.8,
+      "z_vs_random": 0.34539317806946573,
+      "note": "Emotion labels as category instances (Plutchik wheel, but unordered here)",
+      "missing_words": [
+        "surprise",
+        "disgust",
+        "anticipation",
+        "shame"
+      ]
+    },
+    "emotions_hierarchical": {
+      "type": "hierarchical",
+      "category": "emotions",
+      "n": 6,
+      "rho": 0.14970443605530315,
+      "percentile_vs_random": 99.8,
+      "z_vs_random": 3.2298153781770127,
+      "note": "Ordered valence spectrum \u2014 KNOWN strong signal, serves as positive control",
+      "missing_words": [
+        "calm",
+        "boredom",
+        "worry",
+        "rage"
+      ]
+    }
+  },
+  "verdict": "MIXED \u2014 hierarchical > parallel in about half of categories",
+  "interpretation": "Partial support. The signal is category-dependent. Investigate exceptions.",
+  "n_pairs_confirmed": 2,
+  "n_pairs_total": 3
+}
