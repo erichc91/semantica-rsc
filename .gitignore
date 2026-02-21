@@ -1,0 +1,8 @@
+model_cache/
+data/muse_cache/
+data/v3_results.json
+data/v4_results.json
+__pycache__/
+*.pyc
+*.npz
+.env
