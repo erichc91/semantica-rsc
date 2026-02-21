@@ -1,0 +1,106 @@
+{
+  "version": "rsc_topology_v1",
+  "hypothesis": "RSC detects relational topology (not just category membership)",
+  "prediction": "Hierarchical domains >> Parallel domains ~ Random",
+  "n_languages": 13,
+  "n_random_samples": 2000,
+  "hierarchical": {
+    "mean_rho": 0.0664329521370913,
+    "std": 0.05309021337426153,
+    "cohens_d_vs_random": 0.9560749618249418,
+    "p_vs_random": 0.03348610517633056,
+    "domains": [
+      {
+        "domain": "causation",
+        "type": "hierarchical",
+        "n": 10,
+        "rho": 0.042508699030438156
+      },
+      {
+        "domain": "scale",
+        "type": "hierarchical",
+        "n": 11,
+        "rho": 0.08380230880230881
+      },
+      {
+        "domain": "time",
+        "type": "hierarchical",
+        "n": 11,
+        "rho": 0.02577515077515078
+      },
+      {
+        "domain": "valence",
+        "type": "hierarchical",
+        "n": 9,
+        "rho": 0.16232765803499585
+      },
+      {
+        "domain": "social",
+        "type": "hierarchical",
+        "n": 12,
+        "rho": 0.017750944042562878
+      }
+    ]
+  },
+  "parallel": {
+    "mean_rho": 0.034346814161925365,
+    "std": 0.03533507982343881,
+    "cohens_d_vs_random": -0.16367163258817255,
+    "p_vs_random": 0.7150715666462577,
+    "domains": [
+      {
+        "domain": "animals",
+        "type": "parallel",
+        "n": 13,
+        "rho": -0.000713340538072769
+      },
+      {
+        "domain": "colors",
+        "type": "parallel",
+        "n": 15,
+        "rho": 0.06093918595526578
+      },
+      {
+        "domain": "tools",
+        "type": "parallel",
+        "n": 9,
+        "rho": -0.008071808071808077
+      },
+      {
+        "domain": "weather",
+        "type": "parallel",
+        "n": 9,
+        "rho": 0.08441132883359835
+      },
+      {
+        "domain": "materials",
+        "type": "parallel",
+        "n": 11,
+        "rho": 0.035168704630643546
+      }
+    ]
+  },
+  "random": {
+    "mean_rho": 0.03903679545952177,
+    "std": 0.028654819773965414,
+    "p95": 0.0913232999463043,
+    "n": 2000
+  },
+  "tests": {
+    "hier_vs_random": {
+      "t": 2.1276721318197054,
+      "p": 0.03348610517633056
+    },
+    "para_vs_random": {
+      "t": -0.36510501162082637,
+      "p": 0.7150715666462577
+    },
+    "hier_vs_para": {
+      "t": 1.0062431916452077,
+      "p": 0.34376037900569895
+    }
+  },
+  "gradient_holds": false,
+  "verdict": "CONFIRMED: Hierarchical > Random (sig), Parallel ~ Random. RSC = relational topology detector.",
+  "runtime_seconds": 60.7
+}

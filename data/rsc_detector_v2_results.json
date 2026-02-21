@@ -1,0 +1,67 @@
+{
+  "version": "rsc_detector_v2",
+  "hypothesis": "RSC rho is a metric for meaningful structured communication",
+  "prediction": "Coherent domains > random samples of same size",
+  "n_languages": 13,
+  "n_random_samples": 1000,
+  "coherent": {
+    "mean_rho": 0.04621981728040353,
+    "std": 0.03160915437294998,
+    "domains": [
+      {
+        "domain": "astronomy",
+        "n": 12,
+        "rho": 0.0928011903901686,
+        "p": 0.09
+      },
+      {
+        "domain": "emotions",
+        "n": 10,
+        "rho": 0.042098360310751926,
+        "p": 0.405
+      },
+      {
+        "domain": "food",
+        "n": 13,
+        "rho": 0.02250459699339933,
+        "p": 0.62
+      },
+      {
+        "domain": "politics",
+        "n": 15,
+        "rho": 0.050193112368231596,
+        "p": 0.285
+      },
+      {
+        "domain": "animals",
+        "n": 13,
+        "rho": -0.003686349353340589,
+        "p": 0.96
+      },
+      {
+        "domain": "nature",
+        "n": 10,
+        "rho": 0.07340799297321035,
+        "p": 0.17
+      }
+    ],
+    "percentile_vs_random": 68.2
+  },
+  "random": {
+    "mean_rho": 0.035222037634489764,
+    "std": 0.027227813945678005,
+    "ci_95": [
+      -0.011320571965528426,
+      0.09378365617208138
+    ],
+    "n_samples": 1000
+  },
+  "ttest": {
+    "t": 0.9844345965474061,
+    "p": 0.32513904277751005
+  },
+  "cohens_d": 0.3728068810979904,
+  "gradient_holds": true,
+  "verdict": "DIRECTIONAL but not significant at p<0.05 (needs more domain sets for power)",
+  "runtime_seconds": 64.1
+}

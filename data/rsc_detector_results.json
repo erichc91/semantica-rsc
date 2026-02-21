@@ -1,0 +1,106 @@
+{
+  "hypothesis": "RSC rho is a metric for meaningful structured communication",
+  "prediction": "Coherent > Mixed > Noise",
+  "results": {
+    "coherent": {
+      "mean_rho": 0.0624300228073813,
+      "std": 0.16546869894982374,
+      "sets": [
+        {
+          "name": "astronomy",
+          "rho": 0.3224238026124819,
+          "p": 0.034
+        },
+        {
+          "name": "emotions",
+          "rho": -0.13008500933029235,
+          "p": 0.748
+        },
+        {
+          "name": "body",
+          "rho": -0.09726311424424632,
+          "p": 0.736
+        },
+        {
+          "name": "food",
+          "rho": 0.07327389591540535,
+          "p": 0.302
+        },
+        {
+          "name": "politics",
+          "rho": 0.14380053908355792,
+          "p": 0.172
+        }
+      ]
+    },
+    "mixed": {
+      "mean_rho": 0.1801907526435828,
+      "std": 0.14151996102652212,
+      "sets": [
+        {
+          "name": "mixed_1",
+          "rho": 0.23414886999792658,
+          "p": 0.062
+        },
+        {
+          "name": "mixed_2",
+          "rho": -0.04357246527057848,
+          "p": 0.574
+        },
+        {
+          "name": "mixed_3",
+          "rho": 0.32300435413642953,
+          "p": 0.032
+        },
+        {
+          "name": "mixed_4",
+          "rho": 0.3085735019697283,
+          "p": 0.014
+        },
+        {
+          "name": "mixed_5",
+          "rho": 0.07879950238440804,
+          "p": 0.342
+        }
+      ]
+    },
+    "noise": {
+      "mean_rho": 0.07796323173681664,
+      "std": 0.02784356010035199,
+      "sets": [
+        {
+          "name": "noise_1",
+          "rho": 0.06923076923076923,
+          "p": 0.34
+        },
+        {
+          "name": "noise_2",
+          "rho": 0.04907733775658304,
+          "p": 0.372
+        },
+        {
+          "name": "noise_3",
+          "rho": 0.11558158822309765,
+          "p": 0.326
+        }
+      ]
+    }
+  },
+  "comparisons": {
+    "coherent_vs_mixed": {
+      "t": -1.081697012989023,
+      "p": 0.310912188364785
+    },
+    "mixed_vs_noise": {
+      "t": 1.0711633551022113,
+      "p": 0.3252801138354966
+    },
+    "coherent_vs_noise": {
+      "t": -0.13962990817861484,
+      "p": 0.8935215343497561
+    }
+  },
+  "gradient_holds": false,
+  "verdict": "NOT CONFIRMED: RSC rho does not distinguish communication structure in this test.",
+  "runtime_seconds": 19.9
+}
